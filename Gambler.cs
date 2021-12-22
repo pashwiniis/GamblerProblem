@@ -14,15 +14,27 @@ namespace GamblerProblem
             int stake = 100;
             int bet;
             int win = 0;
-           // Random random = new Random();
-            //int bet = random.Next(0,2);
+            int loss = 0;
+            Random random = new Random();
+           
             
-            for (bet = 1; bet<stake; bet++)
+            for (int i = 1; i<=stake; i++)
             {
+                bet = random.Next(0, 2);
+                if (bet == 1)
+                {
+                    win++;
+                }
+                else if(bet == 0)
+                {
+                    loss++;
+                }
                 
-                bet++;
+                
             }
-            Console.WriteLine("The everyday bet is " +bet);
+            Console.WriteLine("the wins bet " +win);
+            Console.WriteLine("the loss bet "+loss);
+            
         }
         
     }
